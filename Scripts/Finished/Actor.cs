@@ -26,7 +26,7 @@ public class Actor : ObjectsInScene
 
     public virtual void TakeDamage(int damage)
     {
-        // Health -= damage;
+        health -= damage;
         // If health <= 0 go to dead state
     }
 

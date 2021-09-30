@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+[System.Serializable] // So its editable in inspector
 public class UI
 {
-    public Image playerHealthBar;
-    public SpriteRenderer spriteRenderer;
-    public List<Sprite> gunSprites;
-
+    [SerializeField] private Image playerHealthBar;
+    [SerializeField] private SpriteRenderer spriteRenderer;
+    [SerializeField] private List<Sprite> gunSprites;
+    
     public void UpdatePlayerHealth(Player p)
     {
         // Update player health image;
@@ -21,6 +22,6 @@ public class UI
 
     public void UpdateWeaponSprite(Gun.GunType gunType)
     {
-        // Update weapon to sprite to the new switched weapon
+        // Update weapon to sprite to the new switched weapon (switchcase)
     }
 }
