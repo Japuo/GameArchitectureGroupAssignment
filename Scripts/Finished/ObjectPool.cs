@@ -4,14 +4,20 @@ using UnityEngine;
 
 public class ObjectPool
 {
-    public static ObjectPool SharedInstance; // Geen static zodat er meerdere pools kunnen zijn? Bijv zombie EN bullet
     public List<GameObject> pooledObjects;
     public GameObject objectToPool;
     public int poolMax;
 
-    public ObjectPool()
+    public ObjectPool(GameObject objectToFillPool, int startingPoolMax)
     {
-        // constructor instead of awake
+        // Setting everything up for the objectpool + creating the instances
+        poolMax = startingPoolMax;
+        objectToPool = objectToFillPool;
+        for (int i = 0; i < startingPoolMax; i++)
+        {
+            // Instantiate objectToPool and set it inactive
+            pooledObjects.Add(objectToPool);
+        }
     }
 
     public GameObject GetPooledObject()

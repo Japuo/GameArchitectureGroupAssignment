@@ -21,5 +21,6 @@ public class Gun : IGun
         // Check if there is enough ammo for this gun to shoot
         // Shoot and calculate accuracy and remove ammo
         // ammo--
+        // Add bullet to the bullet Pool in GameManager
     }
 }

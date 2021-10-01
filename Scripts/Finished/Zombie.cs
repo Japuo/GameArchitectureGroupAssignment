@@ -27,7 +27,7 @@ public class Zombie : Actor
     {
         base.SetupStateMachine();
 
-        ZombieWalking zw = new ZombieWalking();
+        ZombieWalkingState zw = new ZombieWalkingState();
         stateMachine.AddState(zw);
 
         stateMachine.GoToState(zw);

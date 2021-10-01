@@ -26,7 +26,7 @@ public class Player : Actor
     {
         base.SetupStateMachine();
 
-        Locomotion lm = new Locomotion();
+        PlayerLocomotionState lm = new PlayerLocomotionState();
         stateMachine.AddState(lm);
 
         stateMachine.GoToState(lm);

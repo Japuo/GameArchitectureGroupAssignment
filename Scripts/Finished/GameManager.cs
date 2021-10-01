@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public ObjectPool objectpool;
+    public static ObjectPool bulletPool;
+    private ObjectPool zombiePool;
 
     public GameObject playerPrefab;
     public GameObject zombiePrefab;
@@ -20,6 +21,7 @@ public class GameManager : MonoBehaviour
     {
         // Spawn Player
         // Reference player
+        // Create zombie and bulletPool
     }
     
     private void Update()
@@ -53,6 +55,11 @@ public class GameManager : MonoBehaviour
         // Retrieve gun
         // If new gun call player PickUpGun
         // if already owned gun add ammo from retrieved gun to the already owned type of the gun
+    }
+
+    public void OnZombieDeath()
+    {
+        // Disable Zombie and put it in the Objectpool for zombies
     }
 
 }
