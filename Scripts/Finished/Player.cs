@@ -9,11 +9,6 @@ public class Player : Actor
     [SerializeField] private GameObject bullet; // SerializeField so we can add the prefab in inspector
     private List<Gun> availableGuns = new List<Gun>();
 
-    protected override void Start()
-    {
-        SetupStateMachine();
-    }
-
     public override void TakeDamage(int damage)
     {
         base.TakeDamage(damage);
@@ -32,9 +27,9 @@ public class Player : Actor
         stateMachine.GoToState(lm);
     }
 
-    protected override void Update()
+    protected override void ActorUpdate()
     {
-        base.Update();
+        base.ActorUpdate();
     }
 
     public void PickUpGun(Gun.GunType typeGun)

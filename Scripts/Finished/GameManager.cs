@@ -28,6 +28,11 @@ public class GameManager : MonoBehaviour
     {
         EnemySpawnSystem();
     }
+
+    public void UpdatePlayer(Player player)
+    {
+        player.ActorUpdate();
+    }
     
     private void EnemySpawnSystem()
     {

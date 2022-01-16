@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Actor : ObjectsInScene
+public class Actor
 {
     protected StateMachine stateMachine;
 
@@ -11,12 +11,6 @@ public class Actor : ObjectsInScene
     public int attackDamage = 10;
 
     private int health = 100;
-
-    protected virtual void Start()
-    {
-        // Reference actor transform
-        actorTransform = gameObject.transform;
-    }
 
     public void ReferenceGm(GameManager gm)
     {
@@ -31,7 +25,7 @@ public class Actor : ObjectsInScene
     }
 
     // Call the update loop of the currentState
-    protected virtual void Update()
+    protected virtual void ActorUpdate()
     {
         stateMachine.CurrentState.StateUpdate(this);
     }
